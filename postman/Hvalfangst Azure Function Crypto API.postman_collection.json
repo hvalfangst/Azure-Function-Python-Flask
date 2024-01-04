@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "edde8ba3-fc1a-43ca-9534-9ff5ec08969e",
+		"name": "Hvalfangst Azure Function Crypto API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29899311"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hvalfangstlinuxfunctionapp.azurewebsites.net/index",
+					"protocol": "https",
+					"host": [
+						"hvalfangstlinuxfunctionapp",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plain_text\": \"TVT is a copium addict\",\r\n    \"encryption_key\": \"naturligvis\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hvalfangstlinuxfunctionapp.azurewebsites.net/encrypt",
+					"protocol": "https",
+					"host": [
+						"hvalfangstlinuxfunctionapp",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"encrypted_text\": \"ptmFnxDwlDwifg/L9Td5d9Hce12kevZ/Sm7OlP4iNZk=:EWxKvcaCVHgKLs34wgzWVg==:8lvYK2fkOLrOdEXNyOXNp+DQ3rb8duyh1RNMReNqVPU=\",\r\n    \"encryption_key\": \"naturligvis\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hvalfangstlinuxfunctionapp.azurewebsites.net/decrypt",
+					"protocol": "https",
+					"host": [
+						"hvalfangstlinuxfunctionapp",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
