@@ -1,7 +1,9 @@
-from flask import Flask, jsonify, request
 import logging
 
-from flask_api.crypto_utils.module import aes_encrypt, aes_decrypt
+import azure.functions as func
+from flask import Flask, jsonify, request
+
+from crypto_utils import aes_encrypt, aes_decrypt
 
 app = Flask(__name__)
 
@@ -87,6 +89,4 @@ def decrypt():
     return jsonify(response)
 
 
-if __name__ == "__main__":
-    # Run the application with the built-in development server
-    app.run()
+app = func.WsgiFunctionApp(app=app.wsgi_app, http_auth_level=func.AuthLevel.ANONYMOUS)
