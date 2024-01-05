@@ -2,7 +2,6 @@ import logging
 
 import azure.functions as func
 from flask import Flask, jsonify, request
-
 from crypto_utils import aes_encrypt, aes_decrypt
 
 app = Flask(__name__)
@@ -89,4 +88,5 @@ def decrypt():
     return jsonify(response)
 
 
+# Create an Azure Function which serves the above routes in our WSGI runtime (Gunicorn)
 app = func.WsgiFunctionApp(app=app.wsgi_app, http_auth_level=func.AuthLevel.ANONYMOUS)
